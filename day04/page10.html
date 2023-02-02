@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function check_id() {
+        //1.id가 id2인 input태그의 value값을 가지고 와야한다.
+        id2_value = document.getElementById('id2').value //. 접근연산자라고함
+        //2.글자길이(length)를 구해서
+        size = id2.value.length 
+        alert(size)
+        //3.5글자 미만이면(if) 오류메시지를 띄어주세요.
+        if (size < 5){
+            div_tag = document.getElementById('result')
+            div_tag.innerHTML = "<font color = red>5글자 미만이므로 가입불가</font>"
+        }else{ 
+            div_tag.innerHTML = "<font color = blue>5글자 이상이므로 가입가능</font>"
+    }
+       }
+       function check_pw() {
+        pw1.value = document.getElementById('pw1').value
+        pw2.value = document.getElementById('pw2').value
+        if (pw1.value == pw2.value) {
+                //alert("로그인 성공!!!")
+                //result안에 오른쪽에 있는 내용을 html코드로 안쪽에 집어넣어요!
+                result.innerHTML = "<font color=red>패스워드일치!!!</font> <img src='1.jpg' width=100 height=100>"
+            } else {
+                //alert("로그인 실패!!!")
+                result.innerHTML = "<font color=blue>패스워드불일치!!!</font> <img src='2.jpg' width=100 height=100>"
+            }
+       }
+    </script>
+</head>
+<body>
+    
+    아이디 : <input type="text" id="id2" value="root">
+    <button onclick="check_id()">id 길이 체크</button>
+    <hr/>
+    패스워드1 : <input type="text" id="pw1" value="1234"> <br>
+    패스워드2 : <input type="text" id="pw2" value="1234"> <br>
+    <button onclick="check_pw()">pw동일여부</button> <br>
+    <hr/>
+    <div id="result">
+        결과 들어갈 곳.
+    </div>
+</body>
+</html>
