@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check() {
+            shop = document.getElementById('shop').value
+            price = document.getElementById('price').value
+            sell = document.getElementById('sell').value
+
+            price1 = parseInt(price)
+
+            if (sell == "2") {
+                price1 = price1 + 1000
+            } else if (sell == "3") {
+                price1 = price1 + 500               
+            }
+                
+            text = '구매상점은' + shop + '이고,결제수단은 <font color="red">' + price1 + '</font>원을' + sell + '을 사용해서 구매하셨습니다.'
+        
+        
+           reslut_tag = document.getElementById('result')
+           reslut_tag.innerHTML = text
+        }
+
+    </script>
+</head>
+<body>
+    <hr color="red">
+    구매상점: <input type="text" id="shop" value="더 조은샵">
+    <br>
+    결제금액: <input type="text" id="price" value="10000">
+    <br>
+    입력수단(1)계좌이체, 2)신용카드, 3)휴대폰결제)
+    <br>
+    <input type="text"  id="sell" value="1">
+    <button onclick="check()">결제 버튼</button>
+    <hr color="blue">
+    <div id="result">
+        <font color="red"></font>
+    </div>
+
+</body>
+</html>
